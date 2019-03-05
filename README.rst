@@ -25,13 +25,13 @@ Moved to settings_.
 Pre-installation
 ----------------
 
-    python 3.6.5
+python 3.6.5
 
-    pip
+pip
 
-    virtualenv
+virtualenv
 
-    virtualwrapper
+virtualwrapper
 
 Setting up your admin user and getting started
 ------------------------------------------------
@@ -57,12 +57,12 @@ Project structure
 apps
 ^^^^^^^^
 
-    Main program logic
+Main program logic
 
-    users provides a customized user-login and user management
+users provides a customized user-login and user management
 
-    image_info is a example program for car damage classification
-    ref_
+image_info is a example program for car damage classification
+ref_
 
 .. _ref: https://github.com/gaetjen/capstone_webapp
 
@@ -70,36 +70,36 @@ apps
 config
 ^^^^^^^^^^
 
-    contains django url, wsgi (local mode by default) settings
-    sub-folder settings contains configuration parameters for settings (django setting.py). You can inherit base.py for test or production deployment configuration.
+contains django url, wsgi (local mode by default) settings
+sub-folder settings contains configuration parameters for settings (django setting.py). You can inherit base.py for test or production deployment configuration.
 
 extra_apps
 ^^^^^^^^^^^^
-    third party program and plugins
+third party program and plugins
 
 media
 ^^^^^^^^
-    Place for storing images, audio, video files
-    In Sub folder **models** stores trained ML-Models
+Place for storing images, audio, video files
+In Sub folder **models** stores trained ML-Models
 
 ml_with_django
 ^^^^^^^^^^^^^^^^
-    Place for storing frontend template
+Place for storing frontend template
 
 requirements
 ^^^^^^^^^^^^^^
-    manages project's dependencies.
+manages project's dependencies.
 
 staticfiles
 ^^^^^^^^^^^^^^^
-    stores frontend static template for webserver or a third-party file storage (nginx).
+stores frontend static template for webserver or a third-party file storage (nginx).
 
     $ python manage.py collectstatic
 
 Test coverage (TBD)
 ---------------------
 
-    To run the tests, check your test coverage, and generate an HTML coverage report::
+To run the tests, check your test coverage, and generate an HTML coverage report::
 
     $ coverage run manage.py test
     $ coverage html
@@ -116,10 +116,10 @@ Running tests with py.test (TBD)
 Sentry (TBD)
 ----------------
 
-    Sentry is an error logging aggregator service. You can sign up for a free account at  https://sentry.io/signup/?code=cookiecutter  or download and host it yourself.
-    The system is setup with reasonable defaults, including 404 logging and integration with the WSGI application.
+Sentry is an error logging aggregator service. You can sign up for a free account at  https://sentry.io/signup/?code=cookiecutter  or download and host it yourself.
+The system is setup with reasonable defaults, including 404 logging and integration with the WSGI application.
 
-    SYou must set the DSN url in production.
+You must set the DSN url in production.
 
 
 Screenshot
