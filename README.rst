@@ -10,6 +10,10 @@ You can use this template to develop a django project very quickly with several 
      :alt: Built with Cookiecutter Django
 
 
+.. contents:: **Contents of this document**
+   :depth: 3
+
+
 Settings (TBD)
 ----------------
 
@@ -17,8 +21,9 @@ Moved to settings_.
 
 .. _settings: http://cookiecutter-django.readthedocs.io/en/latest/settings.html
 
+
 Pre-installation
-^^^^^^^^^^^^^^^^^^^
+----------------
 
     python 3.6.5
 
@@ -29,7 +34,7 @@ Pre-installation
     virtualwrapper
 
 Setting up your admin user and getting started
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------
 
 * By default setting without any configuration for database... Django will create a sqllite.db for us. This program will use this database for local development.
 
@@ -47,10 +52,10 @@ Setting up your admin user and getting started
 
 
 Project structure
-^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 apps
-~~~~~
+^^^^^^^^
 
     Main program logic
 
@@ -63,36 +68,36 @@ apps
 
 
 config
-~~~~~~~
+^^^^^^^^^^
 
     contains django url, wsgi (local mode by default) settings
     sub-folder settings contains configuration parameters for settings (django setting.py). You can inherit base.py for test or production deployment configuration.
 
 extra_apps
-~~~~~~~~~~
+^^^^^^^^^^^^
     third party program and plugins
 
 media
-~~~~~
+^^^^^^^^
     Place for storing images, audio, video files
     In Sub folder **models** stores trained ML-Models
 
 ml_with_django
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
     Place for storing frontend template
 
 requirements
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
     manages project's dependencies.
 
 staticfiles
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
     stores frontend static template for webserver or a third-party file storage (nginx).
 
     $ python manage.py collectstatic
 
 Test coverage (TBD)
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
     To run the tests, check your test coverage, and generate an HTML coverage report::
 
@@ -101,7 +106,7 @@ Test coverage (TBD)
     $ open htmlcov/index.html
 
 Running tests with py.test (TBD)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 ::
 
@@ -109,7 +114,7 @@ Running tests with py.test (TBD)
 
 
 Sentry (TBD)
-^^^^^^^^^^^^^^
+----------------
 
     Sentry is an error logging aggregator service. You can sign up for a free account at  https://sentry.io/signup/?code=cookiecutter  or download and host it yourself.
     The system is setup with reasonable defaults, including 404 logging and integration with the WSGI application.
@@ -118,10 +123,11 @@ Sentry (TBD)
 
 
 Screenshot
-^^^^^^^^^^^
+----------------
 
 
-**Admin Backend for Image Management**
+Admin Backend for Image Management
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://raw.githubusercontent.com/xiabai84/ml_with_django/master/screenshot/customer_image.png
     :alt: HTTPie in action
@@ -130,7 +136,8 @@ Screenshot
 
 
 
-**Log Management**
+Log Management
+^^^^^^^^^^^^^^^^
 
 .. image:: https://raw.githubusercontent.com/xiabai84/ml_with_django/master/screenshot/log_management.png
     :alt: HTTPie in action
@@ -139,7 +146,8 @@ Screenshot
 
 
 
-**Screenshot for User and Group Permission**
+Screenshot for User and Group Permission
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: https://raw.githubusercontent.com/xiabai84/ml_with_django/master/screenshot/group_permissions.png
     :alt: HTTPie in action
