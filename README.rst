@@ -115,3 +115,33 @@ Sentry (TBD)
     The system is setup with reasonable defaults, including 404 logging and integration with the WSGI application.
 
     SYou must set the DSN url in production.
+
+
+Screenshot
+^^^^^^^^^^^
+
+
+**Admin Backend for Image Management**
+
+.. image:: https://raw.githubusercontent.com/xiabai84/ml_with_django/master/screenshot/customer_image.png
+    :alt: HTTPie in action
+    :width: 100%
+    :align: center
+
+
+
+**Log Management**
+
+.. image:: https://raw.githubusercontent.com/xiabai84/ml_with_django/master/screenshot/log_management.png
+    :alt: HTTPie in action
+    :width: 100%
+    :align: center
+
+
+
+**Screenshot for User and Group Permission**
+
+.. image:: https://raw.githubusercontent.com/xiabai84/ml_with_django/master/screenshot/group_permissions.png
+    :alt: HTTPie in action
+    :width: 100%
+    :align: center
