@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+
+<!-- implementation of navbar -->
+{% block navbar_tab %}
+  <ul class="nav navbar-nav">
+      <li><a href="/image_info/upload_image/"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Home &nbsp;</a></li>
+      <li><a href="/admin/users/userprofile/"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;User &nbsp; </a></li>
+      <li class="active"><a href="/image_info/upload_image/"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;Predictions &nbsp;</a></li>
+      <li><a href="base.html"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;Cosmetic</a></li>
+  </ul>
+{% endblock %}
+
+
+{% block predict_images %}
+    <!-- implementation of upload images by button-click event -->
+    <form method="post" action="/image_info/upload_image/" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p><input type="file" multiple name="upload_files"/></p>
+        <div class=form-group>
+          <input type="submit" class="btn btn-primary" value="Hochladen"/>
+        </div>
+    </form>
+
+    <!-- Load customer original images with meta data -->
+    <div class="container gallery-container">
+      <h1>KFZ Fotos </h1>
+      <div class="tz-gallery">
+
+        {% for img in usr_img %}
+        <div class="row">
+          <div class="col-sm-6 col-md-6">
+            <div class="thumbnail" style="background-color:#f2f2f2"> <a class="lightbox" href={{ img.img_file.url }}>
+              <img src={{ img.img_file.url }} alt=""> </a>
+              <div class="caption">
+                <h5>Uploaded by user: &nbsp; &nbsp; &nbsp;{{ img.username }}</h5>
+                <h5>Date: &nbsp;{{ img.upload_time }}</h5>
+                <h5>Original File: &nbsp;{{ img.cust_img_url }}</h5>
+                <h5>ML File Path: &nbsp;{{ img.ml_img_url }}</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estimation via Machine Learning Model -->
+          <div class="col-sm-6 col-md-6" data-background-color="">
+            <div class="thumbnail" style="background-color:#f2f2f2"> <a class="lightbox" href={{ img.pred_file.url }}>
+              <img src={{ img.pred_file.url }} alt=""> </a>
+              <div class="caption">
+                <h5>{{ img.recording }}</h5>
+                <h5>{{ img.damage_grad }}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+      </div>
+    </div>
+
+{% endblock %}

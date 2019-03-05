@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% load staticfiles %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
+    <title>Home Page</title>
+
+    <script src="{% static 'js/echarts.min.js' %}"></script>
+    <script src="{% static 'js/jquery-1.12.4.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'js/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/baguetteBox.min.js' %}"></script>
+    <script src="{% static 'js/home_page.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/cmdb_home.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/baguetteBox.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/thumbnail-gallery.css' %}"/>
+
+    <link rel="stylesheet" href="{% static 'images/a.png' %}"/>
+    <link rel="stylesheet" href="{% static 'images/b.png' %}"/>
+</head>
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="base.html" class="navbar-brand">ML und AI Home</a>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <!-- turn navtab active by selecting items on home page -->
+                {% block navbar_tab %}
+                {% endblock %}
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ request.user.username }}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            <li><a href="base.html"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;Home</a></li>
+                            <li><a href="base.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Profile</a></li>
+                            <li><a href="base.html"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;Setting</a></li>
+                            <li><a href="base.html"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;Account</a></li>
+                            <li><a href="base.html"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;Favorite</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/logout/"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content here ! -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {% block predict_images %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>
+                        Copyright&nbsp;©&nbsp;2015-2018&nbsp;&nbsp;&nbsp;&nbsp;Bai Xia
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/baguetteBox.min.js' %}"></script>
+    <script src="{% static 'js/baguetteBox.min.js' %}"></script>
+    <script type="text/javascript">
+      baguetteBox.run('.tz-gallery');
+    </script>
+
+</body>
+</html>
