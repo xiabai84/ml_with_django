@@ -29,9 +29,9 @@ python 3.6.5
 
 pip
 
-virtualenv
+virtualenv  # python virtual environment
 
-virtualwrapper
+virtualwrapper  # a nice python virtual environment tool for developer
 
 Setting up your admin user and getting started
 ------------------------------------------------
@@ -40,8 +40,9 @@ Setting up your admin user and getting started
 
 * Create an **superuser account**, and start this django program::
 
-    $ workon <project_name> / $ mkvirtualenv <project_name>
-    $ pip install -r requirements
+    $ mkvirtualenv <project_name>   # create a new environment
+    $ workon <project_name>         # active this environment
+    $ pip install -r requirements   # install project dependencies -> it will take a few minutes, depends on your network...
     $ python manage.py makemigrations
     $ python manage.py migrate  # create admin tables
     $ python manage.py createsuperuser --settings=config.settings.local # create local admin user -> enter username, email and password here!
@@ -57,11 +58,11 @@ Project structure
 apps
 ^^^^^^^^
 
-Main program logic
+Main program logic, all of subfolders (packages) here must use MTV-Design-Pattern (Model, Template, View). 
 
-users provides a customized user-login and user management
+**users** provides a customized user-login and user management
 
-image_info is a example program for car damage classification
+**image_inf** is a example program for car damage classification
 ref_
 
 .. _ref: https://github.com/gaetjen/capstone_webapp
@@ -71,7 +72,7 @@ config
 ^^^^^^^^^^
 
 contains django url, wsgi (local mode by default) settings
-sub-folder settings contains configuration parameters for settings (django setting.py). You can inherit base.py for test or production deployment configuration.
+sub-folder settings contains configuration parameters for **settings** (django setting.py). You can inherit base.py for test or production deployment configuration.
 
 extra_apps
 ^^^^^^^^^^^^
@@ -92,7 +93,7 @@ manages project's dependencies.
 
 staticfiles
 ^^^^^^^^^^^^^^^
-stores frontend static template for webserver or a third-party file storage (nginx).
+stores frontend static template like css, html, js for webserver.
 
     $ python manage.py collectstatic
 
