@@ -1,9 +1,9 @@
 ml_with_django
 ==================
 
-**ml_with_django** project provides a template for serving machine learning model with django (python) backend. This project also contains a almost production-ready Admin-Management-UI, which is enhanced default django-admin UI.
+**ml_with_django** is a opensource template for serving machine learning model with django application. This project also contains a almost production-ready admin dashboard, which is based on django-admin.
 
-You can use this template to develop a django project very quickly with several steps.
+You can use this template for developing django based ml-application very quickly only with several steps.
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
@@ -25,22 +25,20 @@ Moved to settings_.
 Pre-installation
 ----------------
 
-python 3.6.5
+* python 3.6.5
 
-pip
+* pip
 
-virtualenv  # python virtual environment
-
-virtualwrapper  # a nice python virtual environment tool for developer
+* virtualenv  or virtualwrapper
 
 Setting up your admin user and getting started
 ------------------------------------------------
 
-* By default setting without any configuration for database... Django will create a sqllite.db for us. This program will use this database for local development.
+* By default setting Django will create a local sqllite.db and use this database for local development.
 
-* Create an **superuser account**, and start this django program::
+* Create a **superuser account**, and start application::
 
-    $ mkvirtualenv <project_name>   # create a new environment
+    $ mkvirtualenv <project_name>   # create a new python virutal environment
     $ workon <project_name>         # active this environment
     $ pip install -r requirements   # install project dependencies -> it will take a few minutes, depends on your network...
     $ python manage.py makemigrations
@@ -48,7 +46,8 @@ Setting up your admin user and getting started
     $ python manage.py createsuperuser --settings=config.settings.local # create local admin user -> enter username, email and password here!
     $ python manage.py runserver 127.0.0.1:8000 # start local service
 
-* To create a **normal user account**, just sign up with your admin account and create a new group by using /admin UI and add a new user to this group. Once you submit it, the user should be verified and ready to use.
+* For creating **new user account**, just sign up with admin account and create a new group by using /admin UI and add new user to this group. 
+Once you submit it, the user should be verified and ready to use.
 
 
 
@@ -58,7 +57,7 @@ Project structure
 apps
 ^^^^^^^^
 
-Main program logic, all of subfolders (packages) here must use MTV-Design-Pattern (Model, Template, View). 
+It contains main program logic. All of packages here must follow MTV-Design-Pattern (Model, Template, View). 
 
 **users** provides a customized user-login and user management
 
@@ -71,8 +70,8 @@ ref_
 config
 ^^^^^^^^^^
 
-contains django url, wsgi (local mode by default) settings
-sub-folder settings contains configuration parameters for **settings** (django setting.py). You can inherit base.py for test or production deployment configuration.
+This folder contains django url, wsgi settings.<br>
+You can inherit base.py for test or production deployment scope.
 
 extra_apps
 ^^^^^^^^^^^^
@@ -80,8 +79,8 @@ third party program and plugins
 
 media
 ^^^^^^^^
-Place for storing images, audio, video files
-In Sub folder **models** stores trained ML-Models
+Place for storing images, audio, video files on your local filesystem.
+Subfolder **models** contains pretrained ML-Models.
 
 ml_with_django
 ^^^^^^^^^^^^^^^^
@@ -89,7 +88,7 @@ Place for storing frontend template
 
 requirements
 ^^^^^^^^^^^^^^
-manages project's dependencies.
+Place for dependency settings.
 
 staticfiles
 ^^^^^^^^^^^^^^^
