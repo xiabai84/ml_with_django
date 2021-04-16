@@ -10,7 +10,7 @@ diff-match-patch==20121119
 Django==1.11
 django-allauth==0.36.0
 django-crispy-forms==1.6.0
-django-debug-toolbar==1.9.1
+django-debug-toolbar==1.11.1
 django-environ==0.4.4
 django-extensions==2.0.7
 django-formtools==2.1
