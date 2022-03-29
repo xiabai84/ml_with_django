@@ -27,7 +27,7 @@ jdcal==1.4
 oauthlib==2.1.0
 odfpy==1.3.6
 openpyxl==2.5.3
-paramiko==2.4.1
+paramiko==2.10.1
 Pillow==5.1.0
 psycopg2-binary==2.7.4
 pyasn1==0.4.3
